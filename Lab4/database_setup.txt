@@ -1,0 +1,1 @@
+mysql -u root -p < C:\xampp\htdocs\Lab4\database_setup.sql
