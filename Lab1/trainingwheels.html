@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+    <title>Example: HTML Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        body {
+            background-color: grey;
+        }
+        @media screen and (min-width: 320px){
+            body {
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 480px){
+            body {
+                background-color: yellow;
+            }
+        } 
+        @media screen and (min-width: 767px){
+            body {
+                background-color: orange;
+            }
+        } 
+        @media screen and (min-width: 960px){
+            body {
+                background-color: red;
+            }
+        } 
+    </style>
+</head>
+<body>
+  <h1>A registration form</h1>
+  <form method="post" action="" enctype="multipart/form-data">
+  	<fieldset>
+  		<legend>Personal Information</legend>
+  		<div>
+  			<label for="fname">First Name</label>
+  			<input type="text" name="fname" id="fname" autofocus>
+  		</div>
+  		<div>
+  			<label for="lname">Last Name</label>
+  			<input type="text" name="lname" id="lname">
+  		</div>
+  		<div>
+			<label for="m">Gender</label>
+			<input type="radio" name="gender" id="m"> Male
+			<input type="radio" name="gender" id="f"> Female
+		</div>
+  	</fieldset>
+
+  	<fieldset>
+  		<legend>Address</legend>
+  		<div>
+  			<label for="street">Street</label>
+  			<input type="text" name="street" id="street">
+  		</div>
+		<div>
+			<label for="city">City</label>
+			<input type="text" name="city" id="city">
+		</div>
+  		<div>
+  			<label for="state">State</label>
+  			<select name="state" id="state">
+  				<option value="Sarawak">Sarawak</option>
+  				<option value="Sabah">Sabah</option>
+  				<option value="Selangor">Selangor</option>
+  			</select>
+  		</div>
+		<div>
+			<label for="country">Country</label>
+			<input type="text" name="country" id="country">
+		</div>	
+		<div>
+			<label for="postcode">Postcode</label>
+			<input type="text" name="postcode" name="postcode" pattern="[0-9]{5}">
+		</div>				
+  	</fieldset>
+  	<div>
+ 		<textarea cols="65" rows="3" style="margin:5px 0 0 2px">TERMS AND CONDITIONS</textarea>
+  	</div>
+  	<div>
+  		<input type="checkbox" name="accept" id="accept">
+  		<label for="accept" style="width:90%">I accept the above Terms and Conditions.</label>
+  	</div>
+
+  	<input type="submit" name="submit" value="Register" style="margin-left:3px">
+  	<input type="reset" name="reset" value="Clear">
+  </form>
+
+  <br>
+  <a href="index.html">Back to Main Page</a>
+</body>
+</html>

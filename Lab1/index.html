@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            color: #444;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Media Queries for responsive background colors */
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: #e0f7fa;
+            }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                background-color: #e8f5e9;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            body {
+                background-color: #fff3e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form method="post" action="" enctype="multipart/form-data" novalidate>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" required autofocus
+                    placeholder="Enter your first name" autocomplete="given-name"
+                    pattern="[A-Za-z]{2,50}" title="2-50 characters, letters only">
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" required
+                    placeholder="Enter your last name" autocomplete="family-name"
+                    pattern="[A-Za-z]{2,50}" title="2-50 characters, letters only">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required
+                    placeholder="your.email@example.com" autocomplete="email">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone" required
+                    placeholder="123-456-7890" autocomplete="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" required
+                    min="1900-01-01" max="2024-12-31">
+            </div>
+            <div>
+                <label>Gender</label>
+                <input type="radio" name="gender" id="m" required value="male">
+                <label for="m">Male</label>
+                <input type="radio" name="gender" id="f" required value="female">
+                <label for="f">Female</label>
+                <input type="radio" name="gender" id="o" required value="other">
+                <label for="o">Other</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Address</legend>
+            <div>
+                <label for="street">Street</label>
+                <input type="text" name="street" id="street" required
+                    placeholder="Enter street address" autocomplete="street-address">
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" required
+                    placeholder="Enter city name" autocomplete="address-level2">
+            </div>
+            <div>
+                <label for="state">State</label>
+                <select name="state" id="state" required autocomplete="address-level1">
+                    <option value="">Select a state</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Penang">Penang</option>
+                </select>
+            </div>
+            <div>
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country" required
+                    placeholder="Enter country" autocomplete="country">
+            </div>
+            <div>
+                <label for="postcode">Postcode</label>
+                <input type="text" name="postcode" id="postcode" required
+                    placeholder="Enter 5-digit postcode" pattern="[0-9]{5}"
+                    title="5-digit postcode" autocomplete="postal-code">
+            </div>
+        </fieldset>
+
+        <div>
+            <textarea cols="65" rows="3" readonly style="margin:5px 0 0 2px">
+TERMS AND CONDITIONS
+1. All information provided must be true and accurate.
+2. By submitting this form, you agree to our privacy policy.
+3. We may contact you via email or phone for verification purposes.
+            </textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="accept" id="accept" required>
+            <label for="accept" style="width:90%">I accept the above Terms and Conditions.</label>
+        </div>
+
+        <div>
+            <input type="submit" name="submit" value="Register">
+            <input type="reset" name="reset" value="Clear">
+        </div>
+    </form>
+    <br>
+    <div style="text-align: center;">
+        <a href="index.html">Back to Main Page</a>
+    </div>
+</body>
+</html>
